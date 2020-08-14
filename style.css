@@ -113,3 +113,16 @@ body{
 .text span{
     color: #6f6f6f;
 }
+
+#reset{
+    border: none;
+    border-radius: 3px;
+    padding: 5px 30px;
+    color:#fff;
+    background-color: rgb(30, 30, 204);
+    cursor: pointer;
+        
+}
+#reset:hover{
+    transform: scale(1.2);
+}
