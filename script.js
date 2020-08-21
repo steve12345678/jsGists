@@ -1,46 +1,71 @@
 const container = document.querySelector('.container');
-const seats = document.querySelectorAll('.row .seat:not(.occupied)');
+const squares = document.querySelectorAll('.row .square:not(.occupied)');
 
 //movie selected
 const movie = document.getElementById('movie');
 const total= document.getElementById('total');
 const count = document.getElementById('count');
 
-const reset = document.getElementById('reset')
-
+const reset = document.getElementById('reset');
+const column = document.getElementById('column');
 let ticketPrice = movie.value;
 
-function updateSeatCountAndTotal(){
-const selectedSeats = document.querySelectorAll('.row .seat.selected') 
-const selectedSeatsCount = selectedSeats.length;
-count.innerText = selectedSeatsCount;
-total.innerText = selectedSeatsCount*ticketPrice
-
-    console.log(selectedSeatsCount)
+function updatesquareCountAndTotal(){
+const selectedsquares = document.querySelectorAll('.row .square.selected') 
+const selectedsquaresCount = selectedsquares.length;
+count.innerText = selectedsquaresCount;
+total.innerText = selectedsquaresCount*ticketPrice;
+ 
 }
 
 function updateTicketPrice(){
     ticketPrice = movie.value;
-    updateSeatCountAndTotal()
+    updatesquareCountAndTotal();
 }
 
-function selectSeat(e){
-if(e.target.classList.contains('seat') && !e.target.classList.contains('occupied')){
-e.target.classList.toggle('selected');
-updateSeatCountAndTotal()
+function selectsquare(e){
+if(e.target.classList.contains('square') && !e.target.classList.contains('occupied') || e.target.classList.contains('image')){
+    if(e.target.classList.contains('image')){
+        const imgUrl = e.target.src;
+        const targetImg = document.getElementById('img1');
+        const newImage = document.createElement('img');
+        newImage.src= imgUrl;
+        targetImg.appendChild(newImage);
+
+        
+        console.log(imgUrl)
+        e.target.parentElement.classList.toggle('selected');
+    }
+
+    e.target.classList.toggle('selected');
+// desapear(e.target);
+    console.log(e.target);
+updatesquareCountAndTotal();
     }
 }
 
 function resetAll(){
-    const selectedSeats = document.querySelectorAll('.row .seat.selected');
-    selectedSeats.forEach(element => {
-        element.classList.remove('selected')
+    const selectedsquares = document.querySelectorAll('.row .square.selected');
+    selectedsquares.forEach(element => {
+        element.classList.remove('selected');
         
     });
-  updateTicketPrice()
+  updateTicketPrice();
 
 }
-movie.addEventListener('change',updateTicketPrice)
-container.addEventListener('click', selectSeat);
+
+function desapear(m){
+    setTimeout(() => {
+       const item=m;
+       if(item.classList.contains('selected')){
+
+        item.classList.remove('selected');
+        console.log(item);
+       }
+        
+    }, 2000);
+}
+movie.addEventListener('change',updateTicketPrice);
+container.addEventListener('click', selectsquare);
 reset.addEventListener('click',resetAll);
-updateSeatCountAndTotal()
+updatesquareCountAndTotal();

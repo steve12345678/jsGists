@@ -4,103 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>Movie Seat Selector</title>
+    <title>Product Selector</title>
 </head>
 <body>
-    <h1>Mega Cinema</h1>
-    <label>Pick a movie</label>
+    <h1>Mega Shop</h1>
+    <label>Pick a product</label>
     <div class="movie-container"> 
          <select id="movie">
-            <option value="10">Toy Story</option>
-            <option value="12">Avengers</option>
-            <option value="8">Superman</option>
-            <option value="9">Joker</option>
+            <option value="10">Toys <script>document.querySelectorAll('option')[0].innerHTML+='$'+document.querySelectorAll('option')[0].value</script> </option>
+            <option value="12">Books <script>document.querySelectorAll('option')[1].innerHTML+='$'+document.querySelectorAll('option')[1].value</script></option>
+            <option value="8">Sneakers <script>document.querySelectorAll('option')[2].innerHTML+='$'+document.querySelectorAll('option')[2].value</script></option>
+            <option value="9">Watches <script>document.querySelectorAll('option')[3].innerHTML+='$'+document.querySelectorAll('option')[3].value</script></option>
         </select>
     </div> 
         <ul class="showcase">
             <li>
-                <div class="seat"></div> 
+                <div class="square"></div> 
                 <small>N/A</small>
             </li>
             <li>
-                <div class="seat selected"></div> 
+                <div class="square selected"></div> 
                 <small>Selected</small>
             </li>
             <li>
-                <div class="seat occupied"></div> 
+                <div class="square occupied"></div> 
                 <small>Occupied</small>
             </li>
              
         </ul>
       
-    
-    <div class="container">
-        <div class="screen"></div>
-        <div class="row">
-            <div class="seat selected"></div>
-            <div class="seat"></div>
-            <div class="seat occupied"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
+    <div class="mainContent">
+       <div class="container">
+          <div class="row">
+            <div class="square selected"></div>
+            <div class="square"></div>
+            <div class="square occupied"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
         </div>
         <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
+            <div class="square"><img src="./img/earbuds.jpg" class="image"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            
+
         </div>
         <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
         </div>
         <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
         </div>
         <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat occupied"></div>
-            <div class="seat occupied"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square occupied"></div>
+            <div class="square occupied"></div>
         </div>
         <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
         </div>
+    </div> 
+    <div class="column" id="column">
+         
+        <div class="imgbox" id="img1"></div>
+        <div class="imgbox"></div>
+        <div class="imgbox"></div>
+
+      
+</div>
     </div>
+    
+ 
     <div class="showcase">
         <button id="reset">Reset</button>
     </div>
-<div class="text">You have selected <span id="count">0</span> seat(s) at price $<span id="total">0</span></div>
+<div class="text">You have selected <span id="count">0</span> square(s) at price $<span id="total">0</span></div>
     <script src="./script.js"></script>
 </body>
 </html>
